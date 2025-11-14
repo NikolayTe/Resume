@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Резюме - Тесовец Николай</title>
+    <link href="resume.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+    <!-- Шапка -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1>Тесовец Николай</h1>
+                <p>Backend-разработчик</p>
+                <a href="#projects" class="btn">Мои проекты</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Обо мне -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2>Обо мне</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Привет! Я разработчик с опытом создания современных и функциональных веб-приложений. Увлекаюсь созданием удобных интерфейсов и решением сложных задач.</p>
+                    <p>Владею современными технологиями веб-разработки, включая Python, Flask, SQL, Nginx, HTML, JavaScript, Git. Постоянно совершенствую свои навыки и изучаю новые технологии.</p>
+                    <p>Ниже вы можете ознакомиться с моими проектами, включая "MiniTwit" и "PizzaRock".</p>
+                </div>
+                <div class="about-image">
+                    <!-- Замените src на путь к вашему фото -->
+                    <img src="me.png" alt="Фото профиля" class="profile-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Проекты -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <h2>Мои проекты</h2>
+            <div class="project-grid">
+                <!-- Проект 1: Минитвиттер -->
+                <div class="project-card">
+                    <img src="miniTwit.png" alt="Минитвиттер" class="project-img">
+                    <div class="project-content">
+                        <h3>MiniTwit</h3>
+                        <p>Микроблогинговая платформа, позволяющая пользователям публиковать короткие сообщения, подписываться на других пользователей и взаимодействовать с контентом через лайки, репосты и комментарии. Система избранного позволяет сохранять понравившиеся твиты, а лента новостей формируется на основе подписок.</p>
+                        <p>Ключевые функции:</p>
+                            <p>📝 Создание и публикация твитов</p>
+                            <p>👥 Подписки на пользователей</p>
+                            <p>💬 Комментарии, репосты, лайки постов</p>
+                            <p>⭐ Лента с добавлением постов в избранное</p>
+                            
+                        <div class="tech-stack">
+                            <span class="tech-tag">Flask</span>
+                            <span class="tech-tag">API</span>
+                            <span class="tech-tag">SQLAlchemy</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Nginx</span>
+                            <span class="tech-tag">Linux</span>
+                        </div>
+                        <a href="https://minitwit.nikolay.store/" class="btn" target="_blank">Подробнее </a>
+                    </div>
+                </div>
+                
+                <!-- Проект 2: Пицца шоп -->
+                <div class="project-card">
+                    <img src="pizza.png" alt="Пицца шоп" class="project-img">
+                    <div class="project-content">
+                        <h3>PizzaRock</h3>
+                        <p>Full-stack приложение для онлайн-заказов в пиццерии. Включает каталог блюд, корзину заказов и систему управления контентом. Реализована двухуровневая система доступа: клиенты делают заказы, администраторы управляют меню и товарами.</p>
+                        <p>Ключевые функции:</p>
+                            <p>🔐 Двухуровневая авторизация (пользователь/админ)</p>
+                            <p>🛒 Корзина с добавлением/удалением товаров</p>
+                            <p>📦 CRUD-операции для товаров в админ-панели</p>
+                            <p>🗂️ Категоризация товаров</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Flask</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">Bootstrap</span>
+                        </div>
+                        <a href="https://pizzashop.nikolay.store/" class="btn" target="_blank">Подробнее</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Контакты -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Свяжитесь со мной</h2>
+            <p>Готов к новым проектам и сотрудничеству!</p>
+            <div class="contact-links">
+                <a href="mailto:nikolay.tesovec@gmail.com" class="contact-link" target="_blank">Email</a>
+                <a href="https://github.com/NikolayTe" class="contact-link" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/nikolay-python/" class="contact-link" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Подвал -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Nikolay. Все права защищены.</p>
+        </div>
+    </footer>
+</body>
+</html>
