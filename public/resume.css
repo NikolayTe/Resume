@@ -197,3 +197,61 @@ footer {
         font-size: 1.2rem;
     }
 }
+
+
+/* Форма отправить резюме */
+.mail-form {
+  max-width: 300px;
+  margin: 0 auto 40px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.mail-form-group {
+  margin-bottom: 15px;
+}
+
+.mail-input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 15px;
+  box-sizing: border-box;
+}
+
+.mail-input:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+.mail-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 17px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.mail-button:hover {
+  background-color: #2980b9;
+}
+
+.mail-button:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+.mail-success-message {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  border-radius: 4px;
+  text-align: center;
+}

@@ -90,8 +90,23 @@
         </div>
     </section>
 
+    
+
     <!-- Контакты -->
     <section class="contact" id="contact">
+
+        <!-- Отправка резюме -->
+        <form class="mail-form">
+            <div class="mail-form-group">
+                <input type="email" class="mail-input" placeholder="Введите вашу почту" required>
+            </div>
+            <button type="submit" class="mail-button">Получить резюме</button>
+            
+            <div class="mail-success-message" style="display: none;">
+                Резюме отправлено
+            </div>
+        </form>
+
         <div class="container">
             <h2>Свяжитесь со мной</h2>
             <p>Готов к новым проектам и сотрудничеству!</p>
@@ -109,5 +124,7 @@
             <p>&copy; 2025 Nikolay. Все права защищены.</p>
         </div>
     </footer>
+
+     <script src="index.js"></script>
 </body>
 </html>

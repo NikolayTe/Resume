@@ -6,7 +6,7 @@ from email.mime.text import MIMEText
 from email.header import Header
 from email import encoders
 import json
-from config import SENDER_EMAIL, SENDER_PASSWORD, SMPT_PORT, SMPT_SERVER, PDF_PATH
+from config import SENDER_EMAIL, SENDER_PASSWORD, SMPT_PORT, SMPT_SERVER, PDF_PATH, LOGS_PATH
 import os
 
 class MailHandler(BaseHTTPRequestHandler):
@@ -30,6 +30,15 @@ class MailHandler(BaseHTTPRequestHandler):
 
     def do_POST(self):
         print('POST')
+
+        print('self.path', '|' + self.path + '|')
+        # Проверяю путь
+        if self.path != '/api/send-resume' or self.path != '/api/send-resume':
+            self.send_error(404, "Endpoint not found")
+            self.write_logs('Кто-то пытался отправить запрос по неверному пути')
+            return            
+
+
         content_length = int(self.headers['Content-Length']) # Получаю длину тела запроса в байтах
         post_data = self.rfile.read(content_length).decode('utf-8') # Читаю нужное кол-во байтов и декодирую в строку 'utf-8'
 
@@ -128,9 +137,9 @@ class MailHandler(BaseHTTPRequestHandler):
 
     
     @staticmethod
-    def write_logs(result, mail):
+    def write_logs(result, mail='None'):
 
-        with open('mail_logs.txt', 'a', encoding='utf-8') as file:
+        with open(LOGS_PATH, 'a', encoding='utf-8') as file:
             file.write(result + ' ' + mail + '\n')
 
 
@@ -142,15 +151,20 @@ class MailHandler(BaseHTTPRequestHandler):
         self.send_header('Access-Control-Allow-Headers', 'Content-Type')
         self.end_headers()
         print("✅ Сервер дал разрешение через OPTIONS")
+        
+        response = {
+                "status": "OK",
+                "message": 'OPTIONS'
+            }
 
+        self.wfile.write(json.dumps(response, ensure_ascii=False).encode('utf-8'))
 
 
 
 
 if __name__ == '__main__':
     
-
-    server = HTTPServer(('localhost', 8000), MailHandler)
-    print('Server run localhost: 8000')
+    server = HTTPServer(('0.0.0.0', 5002), MailHandler)
+    print('Server run 0.0.0.0: 5002')
     server.serve_forever()
 
