@@ -7,6 +7,8 @@ document.querySelector('.mail-form').addEventListener('submit', async function(e
     const success_message = form.querySelector('.mail-success-message'); 
     const email = email_input.value; 
 
+    document.body.classList.add('loading');
+
     // Валидация email
     if (!email || !isValidEmail(email)) {
         alert('Пожалуйста, введите корректный email');
@@ -49,6 +51,8 @@ document.querySelector('.mail-form').addEventListener('submit', async function(e
         // Восстанавливаем кнопку
         button.disabled = false;
         button.textContent = 'Получить резюме';
+
+        document.body.classList.remove('loading')
     }
 
 });
